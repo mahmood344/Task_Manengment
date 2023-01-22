@@ -1,19 +1,18 @@
 <template>
   <v-app>
     <v-container>
-      <v-row justify="center" class="mt-16">
-      <v-col cols="6">
+      <v-row justify="center" class="mt-16" >
+      <v-col cols="12" sm="6">
         <v-card 
-            class="rounded-xl"
-            max-width="700"
-            color="purple lighten-3"
+            class="login-card rounded-xl"
+            max-width="500"
     >
       <v-card-title class="text-center">
         <v-row justify="center">
           <v-col cols="6">
-            <v-avatar color="primary"
+            <v-avatar color="purple lighten-4"
               size="128">
-           <v-icon>
+           <v-icon size="128">
             mdi-account-circle
             </v-icon>
         </v-avatar>
@@ -45,7 +44,8 @@
         </v-col>
         <v-col cols="12">
           <v-btn
-          color="success"
+          dark
+          color="purple darken-2"
           block
           >
           LOGIN
@@ -55,7 +55,7 @@
           </v-btn>
         </v-col>
         <v-col cols="12" class="text-center">
-          <span class="primary--text">Register</span>
+          <span class="purple--text font-weight-bold">Register</span>
         </v-col>
       </v-row>
       </v-card-text>
@@ -79,5 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.login-card{
+  background: rgba(#FFFFFF, 0.3);
+}
 </style>

@@ -1,17 +1,24 @@
 <template>
   <v-app>
-    <v-dialog
+    <div 
+    
+    >
+        <v-dialog
         v-model="login"
         persistent
         fullscreen
-        
+        color="purple"
     >
-        <Login></Login>
+        <Login
+            class="login"
+            
+        ></Login>
     </v-dialog>
     <v-dialog 
     v-model="register">
         <Register></Register>
     </v-dialog>
+    </div>
   </v-app>
 </template>
 
@@ -35,5 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   
+   .login{
+    background: linear-gradient(#e66465, #9198e5);
+   }
 </style>
