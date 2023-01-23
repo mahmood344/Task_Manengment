@@ -1,15 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import L_RPage from '../views/L_RPage.vue'; 
+import LoginForm from '../views/LoginForm.vue';
+import RegisterForm from '../views/RegisterForm.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
- {
-  path:'/L&R',
-  component: L_RPage,
-  name:'L_RPage'
- }
+  {
+    path:'/login',
+    component: LoginForm,
+    name:'Login'
+  },
+  {
+    path:'/register',
+    component: RegisterForm,
+    name:'Register'
+  }
 ];
 
 const router = new VueRouter({
