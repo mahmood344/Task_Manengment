@@ -8,7 +8,7 @@
       rounded
       absolute
       top
-      right
+      left
     >
       {{ getMessageApi.message}}
       <template v-slot:action="{ attrs }">

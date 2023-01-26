@@ -83,8 +83,8 @@ export default {
       login: true,
       register: false,
       show1: false,
-      userName: null,
-      password: null,
+      userName: 'mor_2314',
+      password: '83r5^_',
       validateLogin: [
         (v) => !!v || "Please inter UserName",
         (v) =>
@@ -100,7 +100,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getMessageApi"]),
+    ...mapGetters(["getMessageApi" , "getToken"]),
   },
   methods: {
     loginUser() {
@@ -114,7 +114,7 @@ export default {
           },
         })
           .then((data) => {
-            console.log(data);
+            console.log(data.data);
             this.$store.dispatch("sendDataMessage", {
               message: "you are successfully login",
               status: data.status,
