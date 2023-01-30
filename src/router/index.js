@@ -5,6 +5,7 @@ import RegisterForm from '../views/RegisterForm.vue';
 import Home from '../views/Home.vue';
 import DoneTodos from '../views/DoneTodos.vue';
 import Incomplete from '../views/Incomplete.vue';
+import Task from '../views/Task.vue';
 import store from '../store/index.js';
 Vue.use(VueRouter);
 
@@ -41,6 +42,11 @@ const routes = [
     path:'/incompletetodo' ,
     name:'Incomplete',
     component: Incomplete
+  },
+  {
+    path:'/:id',
+    component: Task,
+    name:'Task'
   }
 ];
 

@@ -12,8 +12,8 @@
           <v-card-action>
             <v-container>
               <v-row>
-                <v-col md="8">
-                  <v-btn color="primary"> viwe Task </v-btn>
+                <v-col md="8" v-if="!$route.params.id">
+                  <v-btn color="primary" v-on:click="goToTask(sendTodo)"> viwe Task</v-btn>
                 </v-col>
                 <v-col md="2">
                   <v-btn icon v-if="!sendTodo.completed" v-on:click="donTask(sendTodo)">
@@ -51,6 +51,14 @@ export default {
               status: 400,
               settimeout: 3,
             });
+      },
+      goToTask(item){
+        this.$router.push({
+          name:'Task',
+          params:{
+            id:item.id
+          }
+        });
       }
     }
 }
