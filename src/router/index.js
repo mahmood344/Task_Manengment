@@ -1,15 +1,47 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import L_RPage from '../views/L_RPage.vue'; 
-
+import LoginForm from '../views/LoginForm.vue';
+import RegisterForm from '../views/RegisterForm.vue';
+import Home from '../views/Home.vue';
+import DoneTodos from '../views/DoneTodos.vue';
+import Incomplete from '../views/Incomplete.vue';
+import store from '../store/index.js';
 Vue.use(VueRouter);
 
 const routes = [
- {
-  path:'/L&R',
-  component: L_RPage,
-  name:'L_RPage'
- }
+  {
+    path:'/',
+    name:'Home',
+    component: Home,
+  },
+  {
+    path:'/login',
+    component: LoginForm,
+    name:'Login',
+    beforeInter:function(next){
+      if(localStorage.getItem('token')){
+        next({name:'Home'})
+      }
+      else{
+        next(false);
+      }
+    }
+  },
+  {
+    path:'/register',
+    component: RegisterForm,
+    name:'Register'
+  },
+  {
+    path:'/tododone',
+    name:'TodoDone',
+    component: DoneTodos
+  },
+  {
+    path:'/incompletetodo' ,
+    name:'Incomplete',
+    component: Incomplete
+  }
 ];
 
 const router = new VueRouter({
